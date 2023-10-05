@@ -11,4 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             taskInput.value = '';
         }
     })
-    
+    taskList.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target.classList.contains('complete-btn')) {
+            completeTask(target);
+        } else if (target.classList.contains('remove-btn')) {
+            removeTask(target);
+        }
+    })
+});
