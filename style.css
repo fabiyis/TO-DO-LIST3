@@ -1,8 +1,10 @@
 body {
+    background-color: #eee;
     font-family: Arial, sans-serif;
 }
 
 .container {
+    background-color: #c7baba;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
