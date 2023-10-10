@@ -20,3 +20,31 @@ const taskModule = (function () {
         toggleTaskStatus,
     };
 })();
+const uiModule = (function () {
+    const taskList = document.getElementById('taskList');
+
+    function clearInput() {
+        document.getElementById('taskInput').value = '';
+    }
+
+    function renderTasks(tasks) {
+        taskList.innerHTML = '';
+        tasks.forEach((task, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span class="${task.completed ? 'completed' : ''}">${task.text}</span>
+                <button class="toggleBtn">Toggle</button>
+                <button class="removeBtn">Remove</button>
+            `;
+            li.querySelector('.toggleBtn').addEventListener('click', () => toggleTask(index));
+            li.querySelector('.removeBtn').addEventListener('click', () => removeTask(index));
+            taskList.appendChild(li);
+        });
+    }
+
+    return {
+        clearInput,
+        renderTasks,
+    };
+})();
+
