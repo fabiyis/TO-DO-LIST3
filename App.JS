@@ -47,4 +47,39 @@ const uiModule = (function () {
         renderTasks,
     };
 })();
+const controllerModule = (function (task, ui) {
+    function init() {
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        addTaskBtn.addEventListener('click', addNewTask);
 
+        ui.renderTasks(task.getTasks());
+    }
+
+    function addNewTask() {
+        const taskInput = document.getElementById('taskInput');
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== '') {
+            task.addTask(taskText);
+            taskInput.value = '';
+            ui.clearInput();
+            ui.renderTasks(task.getTasks());
+        }
+    }
+
+    function toggleTask(index) {
+        task.toggleTaskStatus(index);
+        ui.renderTasks(task.getTasks());
+    }
+
+    function removeTask(index) {
+        task.removeTask(index);
+        ui.renderTasks(task.getTasks());
+    }
+
+    return {
+        init,
+    };
+})(taskModule, uiModule);
+
+controllerModule.init();
