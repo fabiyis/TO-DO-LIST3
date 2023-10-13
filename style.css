@@ -12,14 +12,13 @@ body {
     border: 10px solid #795e5e;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(206, 139, 139, 0.1);
-    
 }
 
 h1 {
     margin-bottom: 30px;
     margin-top: 0px;
     color: #091c31;
-    background-color: #f0e8e8;
+    border-bottom: 2px solid #8a9bad;
 }
 
 ul {
