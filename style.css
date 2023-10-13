@@ -9,9 +9,17 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 10px solid #795e5e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(206, 139, 139, 0.1);
+    
+}
+
+h1 {
+    margin-bottom: 30px;
+    margin-top: 0px;
+    color: #091c31;
+    background-color: #f0e8e8;
 }
 
 ul {
@@ -31,7 +39,7 @@ li {
 
 .completed {
     text-decoration: line-through;
-    color: #888;
+    color: #d19999;
 }
 
 button {

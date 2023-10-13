@@ -13,6 +13,10 @@ const taskModule = (function () {
         tasks[index].completed = !tasks[index].completed;
     }
 
+    function getTasks() {
+        return tasks;
+    }
+
     return {
         getTasks: () => tasks,
         addTask,
